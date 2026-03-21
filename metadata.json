@@ -1,0 +1,5 @@
+{
+  "name": "Qrcodedot",
+  "description": "A simple and clean tool to turn any URL into a high-quality QR code.",
+  "requestFramePermissions": []
+}
