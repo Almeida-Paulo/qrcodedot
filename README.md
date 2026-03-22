@@ -93,4 +93,3 @@ Contribuições são sempre bem-vindas! Se você tem alguma ideia para melhorar 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-Feito com ❤️ e muito código limpo!
