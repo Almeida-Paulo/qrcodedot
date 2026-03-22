@@ -1,5 +1,7 @@
 # 📱 QRCodeDot
 
+<img width="1230" height="603" alt="image" src="https://github.com/user-attachments/assets/6b48b9d5-c95e-49e8-bf13-6c8428a47ac9" />
+
 > Um gerador de QR Codes moderno, extremamente rápido e 100% acessível, construído com as melhores tecnologias do ecossistema front-end.
 
 ![Status](https://img.shields.io/badge/Status-Ativo-success)
