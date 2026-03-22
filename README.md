@@ -38,3 +38,59 @@ Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
 1. Clone este repositório:
 ```bash
 git clone https://github.com/almeida-paulo/qrcodedot.git
+```
+
+2. Acesse a pasta do projeto:
+```bash
+cd qrcodedot
+```
+
+3. Instale as dependências:
+```bash
+npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+5. Abra o seu navegador e acesse: `http://localhost:5173`
+
+## 📦 Build e Deploy (Produção)
+
+Este projeto foi arquitetado para ser servido de forma estática, sendo ideal para ambientes **Linux (Ubuntu)** utilizando **Nginx**.
+
+Para gerar os arquivos otimizados para produção, execute:
+
+```bash
+npm run build
+```
+
+Isso criará uma pasta `/dist` contendo apenas arquivos estáticos (HTML, CSS, JS minificados e com *hash* para cache). 
+
+**Nota para configuração do Nginx:**
+Como este é um *Single Page Application* (SPA), certifique-se de configurar o Nginx para redirecionar rotas não encontradas para o `index.html`:
+
+```nginx
+location / {
+    try_files $uri $uri/ /index.html;
+}
+```
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Se você tem alguma ideia para melhorar o projeto:
+
+1. Faça um *Fork* do projeto
+2. Crie uma *Branch* para sua *Feature* (`git checkout -b feature/MinhaFeatureIncrivel`)
+3. Faça o *Commit* de suas mudanças (`git commit -m 'feat: Adicionando uma feature incrível'`)
+4. Faça o *Push* para a *Branch* (`git push origin feature/MinhaFeatureIncrivel`)
+5. Abra um *Pull Request*
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+Feito com ❤️ e muito código limpo!
