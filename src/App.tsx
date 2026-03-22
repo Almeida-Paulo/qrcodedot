@@ -254,7 +254,7 @@ export default function App() {
               </div>
             </div>
 
-            <button
+            <button id="btn-download-qr"
               onClick={downloadQRCode}
               disabled={!url}
               className="flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-medium hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/10 disabled:opacity-50 disabled:scale-100"
