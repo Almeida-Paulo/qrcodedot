@@ -11,23 +11,6 @@ import { motion, AnimatePresence } from 'motion/react';
 type Language = 'en' | 'pt';
 
 const translations = {
-  en: {
-    title: 'QR code. | Free High-Resolution QR Generator',
-    subtitle: 'Convert links into clean, high-resolution QR codes for free in seconds.',
-    targetUrl: 'Target URL',
-    foreground: 'Foreground',
-    background: 'Background',
-    resolution: 'Resolution',
-    reset: 'Reset Generator',
-    download: 'Download Image',
-    footer: 'Built for speed and clarity.',
-    privacy: 'Privacy',
-    terms: 'Terms',
-    contact: 'Contact',
-    copy: 'Copy URL',
-    placeholder: 'https://example.com',
-    langSwitch: 'Switch to Portuguese'
-  },
   pt: {
     title: 'QR code. | Gerador de QR Code Grátis',
     subtitle: 'Transformar links em QR code grátis. Converta qualquer URL em código QR de alta resolução em segundos.',
@@ -37,19 +20,36 @@ const translations = {
     resolution: 'Resolução',
     reset: 'Resetar Gerador',
     download: 'Baixar Imagem',
-    footer: 'Construído para velocidade e clareza.',
+    footer: 'Construído para ser simples e útil.',
     privacy: 'Privacidade',
     terms: 'Termos',
     contact: 'Contato',
     copy: 'Copiar URL',
     placeholder: 'https://exemplo.com.br',
-    langSwitch: 'Mudar para Inglês'
+    langSwitch: 'Switch to English'
+  },
+  en: {
+    title: 'QR code. | Free High-Resolution QR Generator',
+    subtitle: 'Convert links into clean, high-resolution QR codes for free in seconds.',
+    targetUrl: 'Target URL',
+    foreground: 'Foreground',
+    background: 'Background',
+    resolution: 'Resolution',
+    reset: 'Reset Generator',
+    download: 'Download Image',
+    footer: 'Built to be simple and useful.',
+    privacy: 'Privacy',
+    terms: 'Terms',
+    contact: 'Contact',
+    copy: 'Copy URL',
+    placeholder: 'https://example.com',
+    langSwitch: 'Mudar para Português'
   }
 };
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('en');
-  const [url, setUrl] = useState('https://google.com');
+  const [lang, setLang] = useState<Language>('pt');
+  const [url, setUrl] = useState('https://toolfilled.xyz');
   const [fgColor, setFgColor] = useState('#000000');
   const [bgColor, setBgColor] = useState('#ffffff');
   const [size, setSize] = useState(256);
@@ -137,12 +137,13 @@ export default function App() {
               <div className="space-y-6">
                 {/* URL Input */}
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
+                  <label htmlFor="urlInput" className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
                     <LinkIcon size={14} />
                     {t.targetUrl}
                   </label>
                   <div className="relative group">
                     <input
+                      id="urlInput"
                       type="url"
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
@@ -163,12 +164,13 @@ export default function App() {
                 {/* Customization */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
+                    <label htmlFor="fgColorInput" className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
                       <Palette size={14} />
                       {t.foreground}
                     </label>
                     <div className="flex items-center gap-2 bg-[#f9f9f9] border border-black/10 rounded-xl p-2">
                       <input
+                        id="fgColorInput"
                         type="color"
                         value={fgColor}
                         onChange={(e) => setFgColor(e.target.value)}
@@ -178,12 +180,13 @@ export default function App() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
+                    <label htmlFor="bgColorInput" className="text-xs uppercase tracking-widest font-semibold text-muted flex items-center gap-2">
                       <Palette size={14} />
                       {t.background}
                     </label>
                     <div className="flex items-center gap-2 bg-[#f9f9f9] border border-black/10 rounded-xl p-2">
                       <input
+                        id="bgColorInput"
                         type="color"
                         value={bgColor}
                         onChange={(e) => setBgColor(e.target.value)}
@@ -197,10 +200,11 @@ export default function App() {
                 {/* Size Slider */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <label className="text-xs uppercase tracking-widest font-semibold text-muted">{t.resolution}</label>
+                    <label htmlFor="sizeInput" className="text-xs uppercase tracking-widest font-semibold text-muted">{t.resolution}</label>
                     <span className="text-xs font-mono">{size}px</span>
                   </div>
                   <input
+                    id="sizeInput"
                     type="range"
                     min="128"
                     max="512"

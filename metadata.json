@@ -1,5 +1,5 @@
 {
   "name": "Qrcodedot",
-  "description": "A simple and clean tool to turn any URL into a high-quality QR code.",
+  "description": "Uma ferramenta simples e limpa para transformar qualquer URL em um código QR de alta qualidade.",
   "requestFramePermissions": []
 }
