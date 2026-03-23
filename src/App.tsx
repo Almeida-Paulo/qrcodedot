@@ -75,6 +75,14 @@ export default function App() {
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
+
+      // Disparo do evento para o Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'download_qr', {
+          event_category: 'Downloads',
+          event_label: 'Botão QR Code',
+        });
+      }
     }
   };
 
